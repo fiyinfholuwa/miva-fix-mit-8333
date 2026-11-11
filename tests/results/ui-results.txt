@@ -1,0 +1,38 @@
+MivaFix UI tests against http://localhost:5500
+
+Authentication pages
+  ✓ Login shows inline errors for empty and malformed fields
+  ✓ Wrong password shows a form-level alert and stays on login
+  ✓ Password visibility toggle switches the input type
+  ✓ Registration validates password confirmation and strength meter
+  ✓ Successful registration lands on the student dashboard
+  ✓ Demo buttons sign in each role
+
+Role-based dashboards & navigation
+  ✓ Student sees requester navigation and a New request action
+  ✓ Officer sees "My work" and no request-creation controls
+  ✓ Administrator sees the Admin centre link
+  ✓ Non-admins are redirected away from admin.html
+  ✓ Unauthenticated visitors are redirected to login
+
+Service request form & tracking
+  ✓ New request form shows inline validation for every required field
+  ✓ Evidence picker previews the image
+  ✓ Escape closes the modal
+  ✓ Student submits a request with evidence and sees it tracked
+  ✓ Requests page search finds the new ticket
+  ✓ Status filter is applied and reflected in the URL
+
+Admin & officer workflow
+  ✓ Admin assigns the new request to an officer
+  ✓ Officer records progress with a note; requester is notified
+  ✓ Requester opens notifications and jumps to the request
+  ✓ Admin tabs switch between requests, users and reports
+  ✓ Export rejects an end date before the start date
+  ✓ CSV export downloads a file
+
+Responsive layout
+  ✓ Mobile menu opens and closes the sidebar
+  ✓ No horizontal page overflow at phone width
+
+25 / 25 UI tests passed

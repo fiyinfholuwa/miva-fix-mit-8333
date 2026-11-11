@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a MivaFix account">
+  <title>Create account — MivaFix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <main class="auth-view">
+    <section class="auth-visual">
+      <div class="brand-mark large"><span>✦</span> MivaFix</div>
+      <div class="auth-copy"><p class="eyebrow">Miva Open University · Facilities</p><h1>Make the issue<br><em>easy to fix.</em></h1><p>One account for every fault you report, with updates from the maintenance team as work moves forward.</p></div>
+      <div class="auth-features">
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-11 11M22 2l-7 20-4-9-9-4z"/></svg><strong>Report</strong><span>Structured requests with photo evidence.</span></div>
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><strong>Get notified</strong><span>In-app alerts when status changes.</span></div>
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><strong>Secure</strong><span>Hashed passwords and session sign-in.</span></div>
+      </div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-panel-inner">
+        <div class="mobile-brand brand-mark"><span>✦</span> MivaFix</div>
+        <div class="auth-heading"><p class="eyebrow">Get started</p><h2>Create your account</h2><p>Students and staff can register to report and track requests.</p></div>
+        <form id="register-form" class="form-stack" novalidate>
+          <label class="field">Full name
+            <input type="text" name="full_name" data-label="Full name" placeholder="e.g. Adaeze Okafor" required minlength="2" maxlength="150" autocomplete="name" autofocus>
+          </label>
+          <label class="field">Email address
+            <input type="email" name="email" data-label="Email address" placeholder="you@miva.edu.ng" required autocomplete="email">
+          </label>
+          <label class="field"><span class="label-row">Phone number <span class="optional">Optional</span></span>
+            <input type="tel" name="phone" data-label="Phone number" placeholder="0800 000 0000" autocomplete="tel" pattern="[0-9+\s()\-]{7,20}" data-pattern-message="Use digits only, e.g. 0800 000 0000.">
+          </label>
+          <label class="field">Password
+            <span class="password-wrap"><input type="password" name="password" data-label="Password" placeholder="At least 8 characters" required minlength="8" autocomplete="new-password"><button class="password-toggle" type="button" data-toggle-password aria-pressed="false">Show</button></span>
+            <span class="strength" id="password-strength" data-level="0" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="hint" id="password-hint">Use 8 or more characters.</span>
+          </label>
+          <label class="field">Confirm password
+            <input type="password" name="password_confirm" data-label="Password confirmation" placeholder="Re-enter your password" required autocomplete="new-password">
+          </label>
+          <button class="button button-primary button-wide" type="submit">Create account <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+    </section>
+  </main>
+  <script>window.MIVAFIX_API_BASE = window.MIVAFIX_API_BASE || (location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? 'http://localhost:8000/api' : '/api');</script>
+  <script src="js/core.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

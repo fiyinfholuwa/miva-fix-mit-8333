@@ -1,0 +1,5 @@
+.DS_Store
+tests/node_modules/
+backend/uploads/*
+!backend/uploads/.gitkeep
+!backend/uploads/.htaccess

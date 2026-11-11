@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MivaFix — Miva Open University maintenance service desk">
+  <title>Admin centre — MivaFix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="admin">
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <!-- The sidebar, top bar and page content are rendered by js/app.js after the session is verified. -->
+  <main id="app-view" class="app-view"><div class="page-content"><div class="skeleton-block"><span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span></div></div></main>
+  <div id="modal-root"></div>
+  <script>window.MIVAFIX_API_BASE = window.MIVAFIX_API_BASE || (location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? 'http://localhost:8000/api' : '/api');</script>
+  <script src="js/core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

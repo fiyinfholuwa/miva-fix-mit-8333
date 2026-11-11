@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sign in to MivaFix, the Miva Open University maintenance service desk">
+  <title>Sign in — MivaFix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <main class="auth-view">
+    <section class="auth-visual" aria-hidden="false">
+      <div class="brand-mark large"><span>✦</span> MivaFix</div>
+      <div class="auth-copy">
+        <p class="eyebrow">Miva Open University · Facilities</p>
+        <h1>Campus works.<br><em>Kept in order.</em></h1>
+        <p>Report a fault in under a minute, follow it from submission to fix, and keep every repair on record.</p>
+      </div>
+      <div class="auth-features">
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-11 11M22 2l-7 20-4-9-9-4z"/></svg><strong>Report</strong><span>Structured requests with photo evidence.</span></div>
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Track</strong><span>Live status and a full activity trail.</span></div>
+        <div class="auth-feature"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><strong>Resolve</strong><span>Assigned officers close the loop.</span></div>
+      </div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-panel-inner">
+        <div class="mobile-brand brand-mark"><span>✦</span> MivaFix</div>
+        <div class="auth-heading"><p class="eyebrow">Welcome back</p><h2>Sign in to your desk</h2><p>Use your university account to continue.</p></div>
+        <form id="login-form" class="form-stack" novalidate>
+          <label class="field">Email address
+            <input type="email" name="email" data-label="Email address" placeholder="you@miva.edu.ng" required autocomplete="email" autofocus>
+          </label>
+          <label class="field">Password
+            <span class="password-wrap"><input type="password" name="password" data-label="Password" placeholder="Enter your password" required autocomplete="current-password"><button class="password-toggle" type="button" data-toggle-password aria-label="Show password" aria-pressed="false">Show</button></span>
+          </label>
+          <button class="button button-primary button-wide" type="submit">Sign in <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-switch">New to MivaFix? <a href="register.html">Create an account</a></p>
+        <div class="demo-login">
+          <div class="demo-title"><span>DEMO ACCESS</span></div>
+          <p>One-click sign-in for assessment. Password: <strong>Password123!</strong></p>
+          <div class="demo-buttons">
+            <button type="button" data-demo="student@miva.test">Student<small>Requester</small></button>
+            <button type="button" data-demo="officer@miva.test">Officer<small>Maintenance</small></button>
+            <button type="button" data-demo="admin@miva.test">Admin<small>Facilities</small></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>window.MIVAFIX_API_BASE = window.MIVAFIX_API_BASE || (location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? 'http://localhost:8000/api' : '/api');</script>
+  <script src="js/core.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

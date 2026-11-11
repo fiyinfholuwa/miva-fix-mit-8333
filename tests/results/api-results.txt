@@ -1,0 +1,57 @@
+MivaFix API tests against http://localhost:8000/api
+
+Authentication & session management
+  ✓ GET /auth/me reports unauthenticated without a session
+  ✓ POST /auth/register rejects invalid input with field errors (422)
+  ✓ POST /auth/register creates a student/staff account (201)
+  ✓ POST /auth/register rejects a duplicate email (409)
+  ✓ POST /auth/login rejects a wrong password (401)
+  ✓ POST /auth/login signs in the student demo account
+  ✓ POST /auth/login signs in the officer demo account
+  ✓ POST /auth/login signs in the admin demo account
+  ✓ Session cookie is HttpOnly and SameSite=Lax
+
+Role-based access control
+  ✓ Protected routes return 401 without a session
+  ✓ Students cannot list users or export reports (403)
+  ✓ Officers cannot create requests (403)
+
+Service request CRUD, upload & validation
+  ✓ GET /categories lists the five seeded categories
+  ✓ POST /requests rejects missing fields with field errors (422)
+  ✓ POST /requests rejects a non-image evidence file (422)
+  ✓ POST /requests creates a request with image evidence (201)
+  ✓ GET /requests/{id} returns details and the initial audit entry
+  ✓ GET /requests/{id}/evidence streams the uploaded image to the owner
+  ✓ Another student cannot view the request or its evidence (403)
+  ✓ PATCH /requests/{id} lets the owner edit a submitted request
+  ✓ GET /requests/999999 returns 404
+
+Search, filter & pagination
+  ✓ Students only see their own requests
+  ✓ Search by ticket number returns the matching request
+  ✓ Status filter returns only matching statuses
+  ✓ Pagination honours limit and reports page count
+
+Assignment, status workflow, audit trail & notifications
+  ✓ GET /officers lists active maintenance officers (admin)
+  ✓ Officer cannot update a request not assigned to them (403)
+  ✓ Assigning to a non-officer user is rejected (422)
+  ✓ POST /requests/{id}/assign assigns the officer and sets status
+  ✓ Assigned officer sees the job in their queue
+  ✓ Officer moves the job to in progress, then completed
+  ✓ Officer cannot cancel a request (403) and invalid statuses are rejected (422)
+  ✓ Audit trail records every step with actor and note
+  ✓ Requester receives in-app notifications and can mark them read
+  ✓ GET /dashboard returns role-scoped totals
+
+Administration, export & documentation
+  ✓ GET /users lists users without password hashes (admin)
+  ✓ GET /export/requests.csv downloads a CSV with header row
+  ✓ GET /export/requests.pdf downloads a valid PDF
+  ✓ GET /api/docs returns an OpenAPI 3.0 document
+  ✓ DELETE /requests/{id} is admin-only and removes the request
+  ✓ Unknown routes return a JSON 404
+  ✓ POST /auth/logout ends the session
+
+42 / 42 API tests passed

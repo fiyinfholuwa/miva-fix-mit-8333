@@ -1,0 +1,14 @@
+{
+  "name": "mivafix-tests",
+  "private": true,
+  "type": "module",
+  "description": "API integration and browser end-to-end tests for MivaFix",
+  "scripts": {
+    "test:api": "php api/ApiTest.php",
+    "test:ui": "node ui/ui.test.mjs",
+    "test": "npm run test:api && npm run test:ui"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.48.0"
+  }
+}
