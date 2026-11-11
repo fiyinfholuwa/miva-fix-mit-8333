@@ -42,6 +42,23 @@ cd tests && npm install && npm run test:ui   # 25 browser tests (uses installed 
 
    Then open `http://localhost:5500`. For production, configure `/api/*` to point to `backend/public/index.php` and serve `frontend/` as the document root.
 
+## Frontend environment configuration
+
+The frontend is static HTML, so `.env` values are injected at build time rather than read by the browser. To configure a local API URL:
+
+```bash
+cp frontend/.env.example frontend/.env
+node scripts/build-frontend.mjs
+```
+
+Set `MIVAFIX_API_BASE` in `frontend/.env`, then serve `frontend/` as usual. For a production deployment, set `MIVAFIX_API_BASE` in the hosting provider's environment settings and use this build command:
+
+```bash
+node scripts/build-frontend.mjs
+```
+
+For Vercel, use `frontend` as the output directory. The variable should contain only the public API URL, for example `https://api.example.com/api`; never put passwords or secret keys in frontend environment variables.
+
 ## Demo accounts
 
 All demo accounts use the password `Password123!` after running the seed script.

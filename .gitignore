@@ -1,4 +1,8 @@
 .DS_Store
+.env
+.env.*
+!.env.example
+frontend/js/config.js
 tests/node_modules/
 backend/uploads/*
 !backend/uploads/.gitkeep

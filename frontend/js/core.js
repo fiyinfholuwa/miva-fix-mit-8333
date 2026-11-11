@@ -2,7 +2,7 @@
 (() => {
   'use strict';
 
-  const API = window.MIVAFIX_API_BASE || '/api';
+  const API = window.MIVAFIX_API_BASE || 'https://miva.unifiechat.com/api';
 
   const ICONS = {
     home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
